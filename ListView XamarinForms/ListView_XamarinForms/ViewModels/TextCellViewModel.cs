@@ -1,11 +1,13 @@
 ﻿using ListView_XamarinForms.Models;
 using ListView_XamarinForms.ViewModels.Base;
 using System.Collections.ObjectModel;
+using SQLite;
 
 namespace ListView_XamarinForms.ViewModels
 {
     public class TextCellViewModel : ViewModelBase
     {
+        SQLiteConnection db = new SQLiteConnection(dbPath);
         public ObservableCollection<Monkey> Monkeys { get; set; }
 
         public TextCellViewModel()
