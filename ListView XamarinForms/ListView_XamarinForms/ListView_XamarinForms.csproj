@@ -39,6 +39,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Monkey.cs" />
+    <Compile Include="ViewModels\Base\TodoItem.cs" />
+    <Compile Include="ViewModels\Base\TodoItemDatabase.cs" />
     <Compile Include="Views\Personatge.xaml.cs">
       <DependentUpon>Personatge.xaml</DependentUpon>
     </Compile>

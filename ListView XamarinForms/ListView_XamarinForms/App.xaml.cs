@@ -1,11 +1,17 @@
 ﻿using ListView_XamarinForms.ViewModels.Base;
 using ListView_XamarinForms.Views;
+using System;
+using System.IO;
+using System.Diagnostics;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ListView_XamarinForms
 {
     public partial class App : Application
     {
+        static TodoItemDatabase database;
+
         private static ViewModelLocator _locator;
 
         public static ViewModelLocator Locator
@@ -18,6 +24,18 @@ namespace ListView_XamarinForms
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainView(null));
+        }
+
+        public static TodoItemDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new TodoItemDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

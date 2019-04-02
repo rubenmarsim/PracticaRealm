@@ -7,7 +7,7 @@ namespace ListView_XamarinForms.ViewModels
 {
     public class TextCellViewModel : ViewModelBase
     {
-        SQLiteConnection db = new SQLiteConnection(dbPath);
+        //SQLiteConnection db = new SQLiteConnection(dbPath);
         public ObservableCollection<Monkey> Monkeys { get; set; }
 
         public TextCellViewModel()
